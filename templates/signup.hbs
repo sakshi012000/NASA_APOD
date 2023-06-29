@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    
+<h1>Sign Up</h1>
+
+    {{#if successMessage}}
+<div class="success-message">{{successMessage}}</div>
+{{/if}}
+
+    <form action="/signup" method="post" >
+        <input placeholder="Email" name="email" type="email">
+        <br>
+        <input placeholder="Password" name="password" type="password">
+        <br>
+        <input placeholder="Confirm Password" name="cpassword" type="password">
+        <br>
+        <input class="sub" type="submit" value="Register">
+    </form>
+
+       <a href="/login">Go back to login page</a>
+
+
+</body>
+</html>

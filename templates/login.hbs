@@ -1,0 +1,75 @@
+{{!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+    <h1>Login Form</h1>
+
+    <form action="/login" method="post" >
+        <input placeholder="Email" name="email" type="email">
+        <br>
+        <input placeholder="Password" name="password" type="password">
+        <br>
+        <input class="sub" type="submit" value='Login'>
+     <h3>Don't have a account ?</h3>
+    <a href="/signup">Create a new account</a>
+    </form>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+</body>
+</html> --}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+    <h1>Login Form</h1>
+
+    <form action="/login" method="post">
+        <input placeholder="Email" name="email" type="email">
+        <br>
+        <input placeholder="Password" name="password" type="password">
+        <br>
+        <input class="sub" type="submit" value="Login">
+        <h3>Don't have an account?</h3>
+        <a href="/signup">Create a new account</a>
+    </form>
+
+    <!-- Add the Google Sign-In with GSI JavaScript code -->
+    <div id="g_id_onload"
+         data-client_id="372459403922-u46ved0n16b804hs1dn01oshan4u57du.apps.googleusercontent.com"
+         data-callback="handleCredentialResponse">
+    </div>
+    <div class="g_id_signin" data-type="standard"></div>
+
+    <script>
+        function handleCredentialResponse(response) {
+            // Handle the response from Google Sign-In with GSI
+            // This is where you can send the response to your server for further authentication or processing
+            // You can access the user's ID token and other information in the response object
+            console.log(response);
+            // Example: Send the ID token to your server using Ajax
+            // const idToken = response.credential;
+            // $.post("/gsi-authentication", { idToken: idToken }, function(data) {
+            //     // Handle the server response
+            // });
+        }
+    </script>
+
+    <!-- Load the Google Sign-In with GSI library -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+</body>
+</html>
